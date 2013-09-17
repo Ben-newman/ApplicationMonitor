@@ -2,7 +2,7 @@
 public class Application 
 {
 	private String title;
-	private String releaseDate;
+	private String version;
 	private String description;
 
 	public Application(String title)
@@ -12,9 +12,9 @@ public class Application
 	
 	
 	//basic getter and setter methods
-	public String getReleaseDate() { return releaseDate; }
+	public String getReleaseDate() { return version; }
 
-	public void setReleaseDate(String releaseDate) { this.releaseDate = releaseDate; }
+	public void setReleaseDate(String releaseDate) { this.version = releaseDate; }
 
 	public String getDescription() { return description; }
 
