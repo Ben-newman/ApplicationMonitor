@@ -14,19 +14,31 @@ public class Grabber {
 
         String inputLine;
         while ((inputLine = in.readLine()) != null){
-        	
-            //System.out.println(inputLine+"\n\n");
-            if(inputLine.contains("<item>")){
-            	String[] temp = inputLine.split("<item>");
-            	String[] temp2 = temp[1].split("</item>");
-            	items.add(temp2[0]);
-            }
-            
+            items.add(extractTagContent("item", inputLine));
         }
         
         for(String s:items)
         	System.out.println(s);
         
         in.close();
+    }
+    
+    public static String extractTagContent(String tagName, String extractFrom)
+    {    	
+    	if(extractFrom.contains("<"+tagName+">")){
+        	String[] temp = extractFrom.split("<"+tagName+">");
+        	String[] temp2 = temp[1].split("</"+tagName+">");
+        	return temp2[0];
+        }
+    	
+    	return null;
+    }
+    
+    public static boolean checkItem(String item)
+    {
+    	//get title
+    	String title = extractTagContent("title", item);
+    	
+    	return false;    	
     }
 }
