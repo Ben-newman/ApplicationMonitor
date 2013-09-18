@@ -5,6 +5,7 @@ public class Controller
 {
 	private static Grabber grabber;
 	static private ArrayList<Application> apps;
+	private static BAM window;
 	
     public static void main(String[] args) throws Exception 
     {
@@ -13,6 +14,9 @@ public class Controller
 		addApplications();
 		
 		grabber.performGrab(apps);
+		window = BAM.gogogo();
+		
+		window.updateAvailableChrome("4.44.4.4");
     }
 	
 	

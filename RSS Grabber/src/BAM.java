@@ -27,17 +27,20 @@ public class BAM {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static BAM gogogo() {
+		final BAM window = new BAM();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					BAM window = new BAM();
+					
 					window.frmBam.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
+		
+		return window;
 	}
 
 	/**
@@ -82,11 +85,16 @@ public class BAM {
 	
 	public void updateAvailableChrome(String newVersion)
 	{
-		txtrChrome.setText(txtrChrome.getText()+newVersion);
+		txtrChrome.setText(txtrChrome.getText()+"\nNew version available: "+newVersion);
+		txtrChrome.setBackground(new Color(230, 20, 25));
+		
+		
 	}
 	
 	public void updateChrome(String newVersion)
 	{
 		txtrChrome.setText("Chrome\n"+newVersion);
+		
+		txtrChrome.setBackground(new Color(0, 100, 0));
 	}
 }
