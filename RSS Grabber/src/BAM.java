@@ -253,6 +253,7 @@ public class BAM {
 		switch(app.getTitle()){
 		case "Chrome" : 
 			finaliseUpdate(txtrChrome, btnChrome, "Chrome", newVersion);
+			
 			break;
 		case "Firefox" : 
 			finaliseUpdate(txtrFirefox, btnFirefox, "Firefox",newVersion);
@@ -270,6 +271,7 @@ public class BAM {
 		
 		}
 		
+		app.setVersion(newVersion);
 	}
 	
 	private void finaliseUpdate(JTextArea textArea, JButton button, String name, String newVersion)
