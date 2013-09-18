@@ -46,13 +46,9 @@ public class BAM {
 	private JTextArea txtrSkype;
 	
 	JButton btnChrome;
-	
 	JButton btnFirefox;
-	
 	JButton btnSafari;
-	
 	JButton btnSkype;
-	
 	JButton btnOpera;
 
 	/**
