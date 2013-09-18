@@ -51,23 +51,26 @@ public class Grabber {
     public Application checkItem(String item, ArrayList<Application> apps)
     {
     	String title = extractTagContent("title", item);
+    	String link = extractTagContent("link", item);
     	for(Application app : apps) 
     	{
-    		if(title.contains(app.getTitle()))
-    			return update(app, title.substring(app.getTitle().length()+1));  //If the title matches then get new version number substring of title from rss and perform update
+    		if(title.contains(app.getTitle())){
+    			String newVersion = title.substring(app.getTitle().length()+1);
+    			return update(app, newVersion, link);  //If the title matches then get new version number substring of title from rss and perform update
+    		}
     	}
     	
     	return null;    	
     }
     
-    public Application update(Application app, String newVersion)
+    public Application update(Application app, String newVersion, String link)
     {
     	//Check if the version numbers are different
     	if(!app.getVersion().equals(newVersion)) { //If they are update to new one
     		System.out.println("Update:.."+app.getTitle());
     		System.out.println("\t\tOld version:.."+app.getVersion());
     		System.out.println("\t\tNew version:.."+newVersion);
-    		bam.updateAvailable(app, newVersion, "http://google.com");
+    		bam.updateAvailable(app, newVersion, link);
     	}
     	
     	return app;
