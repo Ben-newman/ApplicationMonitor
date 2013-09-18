@@ -25,9 +25,7 @@ public class Grabber {
         
         for(String item:items) {
         	
-        	Application check = checkItem(item, apps);
-        	if(check!=null)
-        		System.out.println("Match found: - "+check.getTitle());
+        	checkItem(item, apps);
         }
         
         in.close();
