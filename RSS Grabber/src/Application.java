@@ -17,9 +17,9 @@ public class Application
 	
 	
 	//basic getter and setter methods
-	public String getReleaseDate() { return version; }
+	public String getVersion() { return version; }
 
-	public void setReleaseDate(String releaseDate) { this.version = releaseDate; }
+	public void setVersion(String version) { this.version = version; }
 
 	public String getDescription() { return description; }
 

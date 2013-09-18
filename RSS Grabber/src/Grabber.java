@@ -51,9 +51,20 @@ public class Grabber {
     	for(Application app : apps) 
     	{
     		if(title.contains(app.getTitle()))
-    			return app;
+    			return update(app, title.substring(app.getTitle().length()+1));  //If the title matches then get new version number substring of title from rss and perform update
     	}
     	
     	return null;    	
+    }
+    
+    public static Application update(Application app, String newVersion)
+    {
+    	//Check if the version numbers are different
+    	if(!app.getVersion().equals(newVersion)) {
+    	//If they are update to new one
+    		
+    	}
+    	
+    	return app;
     }
 }
