@@ -245,6 +245,7 @@ public class BAM {
 			public void actionPerformed(ActionEvent e) {
 				openWebsite(link);
 				Controller.updateApp(name, newVersion);
+				finaliseUpdate(name, newVersion);
 			}
 		});
 	}
