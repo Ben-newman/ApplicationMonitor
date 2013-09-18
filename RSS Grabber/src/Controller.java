@@ -18,11 +18,11 @@ public class Controller
 	
 	public static void addApplications()
 	{
-    	apps.add(new Application("Chrome"));
-    	apps.add(new Application("Firefox"));
-    	apps.add(new Application("Safari"));
-    	apps.add(new Application("Skype"));
-    	apps.add(new Application("Opera"));
+    	apps.add(new Application("Chrome"));	apps.get(1).setVersion("30.0.1599.22");
+    	apps.add(new Application("Firefox"));	apps.get(2).setVersion("23.0");
+    	apps.add(new Application("Safari"));	apps.get(3).setVersion("6.0.5");
+    	apps.add(new Application("Skype"));		apps.get(4).setVersion("6.7.0.102");
+    	apps.add(new Application("Opera"));		apps.get(5).setVersion("16.0.1196.73");
 	}
 
 }
