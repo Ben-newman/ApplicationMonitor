@@ -1,3 +1,8 @@
+/*
+ * The GUI
+ * @author: Matt Ball
+ */
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
