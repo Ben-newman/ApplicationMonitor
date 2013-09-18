@@ -8,7 +8,7 @@ import java.io.*;
 
 public class Grabber {
     
-    public static void performGrab() throws Exception
+    public void performGrab(ArrayList<Application> apps) throws Exception
     {
     	ArrayList<String> items = new ArrayList<String>();
         URL oracle = new URL("http://feeds.feedburner.com/filehippo?format=xml");
@@ -25,7 +25,7 @@ public class Grabber {
         
         for(String item:items) {
         	
-        	Application check = checkItem(item);
+        	Application check = checkItem(item, apps);
         	if(check!=null)
         		System.out.println("Match found: - "+check.getTitle());
         }
@@ -45,7 +45,7 @@ public class Grabber {
     	return null;
     }
     
-    public static Application checkItem(String item)
+    public Application checkItem(String item, ArrayList<Application> apps)
     {
     	String title = extractTagContent("title", item);
     	for(Application app : apps) 
@@ -57,12 +57,13 @@ public class Grabber {
     	return null;    	
     }
     
-    public static Application update(Application app, String newVersion)
+    public Application update(Application app, String newVersion)
     {
     	//Check if the version numbers are different
-    	if(!app.getVersion().equals(newVersion)) {
-    	//If they are update to new one
-    		
+    	if(!app.getVersion().equals(newVersion)) { //If they are update to new one
+    		System.out.println("Update:.."+app.getTitle());
+    		System.out.println("\t\tOld version:.."+app.getVersion());
+    		System.out.println("\t\tNew version:.."+newVersion);
     	}
     	
     	return app;

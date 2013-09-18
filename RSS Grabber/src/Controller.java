@@ -12,7 +12,7 @@ public class Controller
 		apps = new ArrayList<Application>();
 		addApplications();
 		
-		grabber.performGrab();
+		grabber.performGrab(apps);
     }
 	
 	
