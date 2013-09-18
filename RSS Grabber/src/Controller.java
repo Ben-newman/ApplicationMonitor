@@ -20,14 +20,14 @@ public class Controller
 	
     public static void main(String[] args) throws Exception 
     {
-    	grabber = new Grabber();
+    	window = BAM.gogogo();
+    	grabber = new Grabber(window);
 		apps = new ArrayList<Application>();
 		setUp();
 		
 		grabber.performGrab(apps);
 		
-		window = BAM.gogogo();
-		window.updateAvailableChrome("4.44.4.4");
+		
 		
 		closeApplication();
     }
