@@ -1,0 +1,5 @@
+Chrome	30.0.1599.22
+Firefox	23.0
+Safari	6.0.5
+Skype	6.7.0.102
+Opera	16.0.1196.73

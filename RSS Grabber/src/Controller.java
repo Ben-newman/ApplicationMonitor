@@ -1,3 +1,6 @@
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 
 
@@ -14,9 +17,11 @@ public class Controller
 		addApplications();
 		
 		grabber.performGrab(apps);
-		window = BAM.gogogo();
 		
+		window = BAM.gogogo();
 		window.updateAvailableChrome("4.44.4.4");
+		
+		closeApplication();
     }
 	
 	
@@ -27,6 +32,17 @@ public class Controller
     	apps.add(new Application("Safari"));	apps.get(2).setVersion("6.0.5");
     	apps.add(new Application("Skype"));		apps.get(3).setVersion("6.7.0.102");
     	apps.add(new Application("Opera"));		apps.get(4).setVersion("16.0.1196.73");
+	}
+	
+	public static void closeApplication() throws FileNotFoundException
+	{
+		PrintStream out = new PrintStream(new FileOutputStream("apps.txt"));
+		System.setOut(out);
+		
+		for (Application app: apps)
+		{
+			System.out.println(app.getAppDetails());
+		}
 	}
 
 }

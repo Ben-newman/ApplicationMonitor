@@ -26,5 +26,7 @@ public class Application
 	public void setDescription(String description) { this.description = description; }
 
 	public String getTitle() { return title; }
+	
+	public String getAppDetails() { return title+"\t"+version; }
 
 }
