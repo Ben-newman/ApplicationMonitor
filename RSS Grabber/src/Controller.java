@@ -32,6 +32,17 @@ public class Controller
 		closeApplication();
     }
 	
+    public static void updateApp(String name, String newVer)
+    {
+    	for(Application app : apps)
+    	{
+    		if(name.equals(app.getTitle())){
+    			app.setVersion(newVer);
+    			break;
+    		}
+    	}
+    }
+    
     public static void setUp()
     {
     	try{
@@ -48,6 +59,7 @@ public class Controller
 	    	version = temp[1];
 	    	
 	    	apps.add(new Application(applicationName, version));
+	    	window.finaliseUpdate(applicationName, version);
 	    	}
 	    	
 	    	in.close();

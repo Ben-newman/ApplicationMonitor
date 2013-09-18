@@ -238,19 +238,22 @@ public class BAM {
 		
 	}
 	
-	private void setupButton(final Application app, JButton button, final String newVersion, final String link)
+	private void setupButton(Application app, JButton button, final String newVersion, final String link)
 	{
+		final String name = app.getTitle();
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				openWebsite(link);
-				finaliseUpdate(app, newVersion);
+				Controller.updateApp(name, newVersion);
 			}
 		});
 	}
 	
-	public void finaliseUpdate(Application app, String newVersion)
+	
+	
+	public void finaliseUpdate(String name, String newVersion)
 	{
-		switch(app.getTitle()){
+		switch(name){
 		case "Chrome" : 
 			finaliseUpdate(txtrChrome, btnChrome, "Chrome", newVersion);
 			
@@ -271,7 +274,8 @@ public class BAM {
 		
 		}
 		
-		app.setVersion(newVersion);
+		
+		
 	}
 	
 	private void finaliseUpdate(JTextArea textArea, JButton button, String name, String newVersion)
