@@ -87,14 +87,11 @@ public class BAM {
 	{
 		txtrChrome.setText(txtrChrome.getText()+"\nNew version available: "+newVersion);
 		txtrChrome.setBackground(new Color(230, 20, 25));
-		
-		
 	}
 	
 	public void updateChrome(String newVersion)
 	{
 		txtrChrome.setText("Chrome\n"+newVersion);
-		
 		txtrChrome.setBackground(new Color(0, 100, 0));
 	}
 }
