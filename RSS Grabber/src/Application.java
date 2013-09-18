@@ -10,9 +10,10 @@ public class Application
 	private String version;
 	private String description;
 
-	public Application(String title)
+	public Application(String title, String version)
 	{
 		this.title = title;
+		this.version = version;
 	}
 	
 	

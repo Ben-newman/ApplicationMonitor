@@ -1,5 +1,8 @@
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 
@@ -14,7 +17,7 @@ public class Controller
     {
     	grabber = new Grabber();
 		apps = new ArrayList<Application>();
-		addApplications();
+		setUp();
 		
 		grabber.performGrab(apps);
 		
@@ -24,14 +27,44 @@ public class Controller
 		closeApplication();
     }
 	
+    public static void setUp()
+    {
+    	try{
+    		BufferedReader in = new BufferedReader(new FileReader("apps.txt"));
+    	
+	    	String inputLine;
+	    	while ((inputLine = in.readLine()) != null)
+	    	{
+	    	String applicationName;
+	    	String version;
+	    	
+	    	String[] temp = inputLine.split("\t");
+	    	applicationName = temp[0];
+	    	version = temp[1];
+	    	
+	    	apps.add(new Application(applicationName, version));
+	    	}
+	    	
+	    	in.close();
+    	}
+    	catch (Exception e)
+    	{
+    		addApplications();
+    	}
+    	
+    	finally
+    	{
+    		
+    	}
+    }
 	
 	public static void addApplications()
 	{
-    	apps.add(new Application("Chrome"));	apps.get(0).setVersion("30.0.1599.22");
-    	apps.add(new Application("Firefox"));	apps.get(1).setVersion("23.0");
-    	apps.add(new Application("Safari"));	apps.get(2).setVersion("6.0.5");
-    	apps.add(new Application("Skype"));		apps.get(3).setVersion("6.7.0.102");
-    	apps.add(new Application("Opera"));		apps.get(4).setVersion("16.0.1196.73");
+    	apps.add(new Application("Chrome", "30.0.1599.22"));
+    	apps.add(new Application("Firefox", "23.0"));
+    	apps.add(new Application("Safari", "6.0.5"));
+    	apps.add(new Application("Skype", "6.7.0.102"));
+    	apps.add(new Application("Opera", "16.0.1196.73"));
 	}
 	
 	public static void closeApplication() throws FileNotFoundException
