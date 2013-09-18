@@ -8,7 +8,11 @@ import java.util.ArrayList;
 import java.io.*;
 
 public class Grabber {
-    
+    private BAM bam;
+	public Grabber(BAM bam) {
+		this.bam = bam;
+	}
+	
     public void performGrab(ArrayList<Application> apps) throws Exception
     {
     	ArrayList<String> items = new ArrayList<String>();
@@ -63,6 +67,7 @@ public class Grabber {
     		System.out.println("Update:.."+app.getTitle());
     		System.out.println("\t\tOld version:.."+app.getVersion());
     		System.out.println("\t\tNew version:.."+newVersion);
+    		bam.updateAvailable(app, newVersion, "http://google.com");
     	}
     	
     	return app;
