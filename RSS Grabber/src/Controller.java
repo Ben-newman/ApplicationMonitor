@@ -34,6 +34,7 @@ public class Controller
 	
     public static void updateApp(String name, String newVer)
     {
+    	
     	for(Application app : apps)
     	{
     		if(name.equals(app.getTitle())){
@@ -41,6 +42,7 @@ public class Controller
     			break;
     		}
     	}
+    	
     }
     
     public static void setUp()
