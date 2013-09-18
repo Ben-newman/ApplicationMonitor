@@ -1,4 +1,9 @@
-
+/*
+ * Basic Java Bean that contains the information for each individual application
+ * 
+ * @author: Ben Newman
+ * 
+ */
 public class Application 
 {
 	private String title;

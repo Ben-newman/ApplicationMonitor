@@ -1,22 +1,15 @@
-
-
-
+/*
+ * 
+ * @author: Matt Ball
+ */
 import java.net.*;
 import java.util.ArrayList;
 import java.io.*;
 
 public class Grabber {
-	
-	static private ArrayList<Application> apps = new ArrayList<Application>();
-	
-    public static void main(String[] args) throws Exception {
-    	
-    	apps.add(new Application("Chrome"));
-    	apps.add(new Application("Firefox"));
-    	apps.add(new Application("Safari"));
-    	apps.add(new Application("Skype"));
-    	apps.add(new Application("Opera"));
-    	
+    
+    public static void performGrab() throws Exception
+    {
     	ArrayList<String> items = new ArrayList<String>();
         URL oracle = new URL("http://feeds.feedburner.com/filehippo?format=xml");
         BufferedReader in = new BufferedReader(
